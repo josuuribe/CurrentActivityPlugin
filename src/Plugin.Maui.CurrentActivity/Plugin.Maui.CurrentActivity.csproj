@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-ios;net6.0-android;net6.0-maccatalyst</TargetFrameworks>
+		<!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks> -->
+		<TargetPlatformMinVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</TargetPlatformMinVersion>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+
+		<PackageId>Plugin.Maui.CurrentActivity</PackageId>
+		<Product>$(AssemblyName) ($(TargetFramework))</Product>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+		<Version>1.0.0.0</Version>
+		<Authors>Josu Uribe</Authors>
+		<PackOnBuild>true</PackOnBuild>
+		<NeutralLanguage>en</NeutralLanguage>
+		<LangVersion>default</LangVersion>
+		<DefineConstants>$(DefineConstants);</DefineConstants>
+
+		<PackageProjectUrl>https://github.com/josuuribe/CurrentActivityPlugin</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/josuuribe/CurrentActivityPlugin</RepositoryUrl>
+		<PackageReleaseNotes>See: https://github.com/josuuribe/CurrentActivityPlugin</PackageReleaseNotes>
+		<PackageIconUrl>http://refractored.com/images/plugin_current_activity.png</PackageIconUrl>
+		<PackageTags>maui, plugin, plugin for Maui, android, activity, current activity</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+		<Title>Current Activity Plugin for Maui.Android</Title>
+		<Summary>Easily gain access to the active Activity.</Summary>
+		<Description>Provides a simple solution for getting access to the current Activity of the application when developing a Plugin for Xamarin.
+This will lay down a base "application" class for developers in their Android application with boilerplate code to get them started.		</Description>
+
+		<Owners>Josu Uribe</Owners>
+		<Authors>Josu Uribe</Authors>
+		<Copyright>Copyright 2021</Copyright>
+		<Company>RaraAvis</Company>
+		<RepositoryType>Git</RepositoryType>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+	</PropertyGroup>
+
+	<PropertyGroup Label="SourceLink">
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-experimental1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="System.Runtime" Version="4.3.1" />
+	</ItemGroup>
+
+</Project>

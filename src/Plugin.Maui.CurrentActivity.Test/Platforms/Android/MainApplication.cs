@@ -1,16 +1,15 @@
-﻿using System;
-
-using Android.App;
-using Android.OS;
+﻿using Android.App;
 using Android.Runtime;
 using Android.Widget;
+using Microsoft.Maui;
 using Plugin.CurrentActivity;
+using System;
 
-namespace CurrentActivityTest
+namespace Plugin.Maui.CurrentActivity.Test
 {
-	[Application]
-	public class MainApplication : Application
-	{
+    [Application]
+    public class MainApplication : MauiApplication
+    {
 		public MainApplication(IntPtr handle, JniHandleOwnership transer)
 		  : base(handle, transer)
 		{
@@ -30,8 +29,9 @@ namespace CurrentActivityTest
 
 		private void Current_ActivityStateChanged(object sender, ActivityEventArgs e)
 		{
-			Toast.MakeText(Application.Context, $"Activity Changed: {e.Activity.LocalClassName} -  {e.Event}", ToastLength.Short).Show();
-
+			Toast.MakeText(Android.App.Application.Context, $"Activity Changed: {e.Activity.LocalClassName} -  {e.Event}", ToastLength.Short).Show();
 		}
-	}
+
+		protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+    }
 }
