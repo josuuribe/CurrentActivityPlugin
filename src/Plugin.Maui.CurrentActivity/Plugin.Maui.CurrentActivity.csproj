@@ -36,7 +36,7 @@
 		<Copyright>Copyright 2021</Copyright>
 		<Company>RaraAvis</Company>
 		<RepositoryType>Git</RepositoryType>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 	</PropertyGroup>
 
