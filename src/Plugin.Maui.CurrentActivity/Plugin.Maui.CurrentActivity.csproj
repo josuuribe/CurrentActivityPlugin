@@ -6,6 +6,7 @@
 		<TargetPlatformMinVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</TargetPlatformMinVersion>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
+		<DefineConstants>$(DefineConstants);</DefineConstants>
 
 		<PackageId>Plugin.Maui.CurrentActivity</PackageId>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
@@ -16,8 +17,8 @@
 		<PackOnBuild>true</PackOnBuild>
 		<NeutralLanguage>en</NeutralLanguage>
 		<LangVersion>default</LangVersion>
-		<DefineConstants>$(DefineConstants);</DefineConstants>
-
+		<!--<PackageReadmeFile>README.md</PackageReadmeFile>-->
+		<PackageIcon>icon.png</PackageIcon>
 		<PackageProjectUrl>https://github.com/josuuribe/CurrentActivityPlugin</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/josuuribe/CurrentActivityPlugin</RepositoryUrl>
 		<PackageReleaseNotes>See: https://github.com/josuuribe/CurrentActivityPlugin</PackageReleaseNotes>
@@ -27,15 +28,15 @@
 
 		<Title>Current Activity Plugin for Maui.Android</Title>
 		<Summary>Easily gain access to the active Activity.</Summary>
-		<Description>Provides a simple solution for getting access to the current Activity of the application when developing a Plugin for Xamarin.
-This will lay down a base "application" class for developers in their Android application with boilerplate code to get them started.		</Description>
-
+		<Description>
+			Provides a simple solution for getting access to the current Activity of the application when developing a Plugin for Xamarin.
+			This will lay down a base "application" class for developers in their Android application with boilerplate code to get them started.
+		</Description>
 		<Owners>Josu Uribe</Owners>
-		<Authors>Josu Uribe</Authors>
 		<Copyright>Copyright 2021</Copyright>
 		<Company>RaraAvis</Company>
 		<RepositoryType>Git</RepositoryType>
-		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 	</PropertyGroup>
 
@@ -44,7 +45,6 @@ This will lay down a base "application" class for developers in their Android ap
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -55,7 +55,7 @@ This will lay down a base "application" class for developers in their Android ap
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="..\..\README.md">
+		<None Include="..\..\art\icon.png">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
@@ -65,4 +65,17 @@ This will lay down a base "application" class for developers in their Android ap
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-experimental1" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\nuget\readme.txt">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 </Project>

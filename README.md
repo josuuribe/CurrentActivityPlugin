@@ -6,22 +6,16 @@ Want to read about the creation, check out my [in-depth blog post](http://motzco
 
 ## Setup
 
-* Available on NuGet: http://www.nuget.org/packages/Plugin.CurrentActivity [![NuGet](https://img.shields.io/nuget/v/Plugin.CurrentActivity.svg?label=NuGet)](https://www.nuget.org/packages/Plugin.CurrentActivity/)
+* Available on NuGet: http://www.nuget.org/packages/Plugin.Maui.CurrentActivity [![NuGet](https://img.shields.io/nuget/v/Plugin.CurrentActivity.svg?label=NuGet)](https://www.nuget.org/packages/Plugin.Maui.CurrentActivity/)
 * Install into your Xamarin.Android Client project.
 
-Build Status: ![Build status](https://jamesmontemagno.visualstudio.com/_apis/public/build/definitions/6b79a378-ddd6-4e31-98ac-a12fcd68644c/18/badge)
+Build Status: [![Build status](https://raraavis.visualstudio.com/Xamarin.Plugins/_apis/build/status/Xamarin.Plugins.CurrentActivity)](https://raraavis.visualstudio.com/Xamarin.Plugins/_build/latest?definitionId=22)
 
 CurrentActivity Readme
 
 This plugin provides base functionality for Plugins for Xamarin to gain access to the application's main Activity.
 
 ## Getting Started
-
-## Version 1.0
-
-Please read the following guide: https://github.com/jamesmontemagno/CurrentActivityPlugin/blob/6458fd91e83c6b56bbfda2c80b5cefcdbae2fe0a/nuget/readme.txt
-
-## Version 2.0 
 
 When the plugin is installed, follow the below steps to initialize in your project. There are two ways to initialize this:
 
